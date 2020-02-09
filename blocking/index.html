@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Blocking</title>
+        <link rel="stylesheet" type="text/css" href="styles.css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700&display=swap" rel="stylesheet" />
+    </head>
+    <script>
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+
+        function blocking(form) {
+            var back = document.getElementById("BGBody");
+            back.innerHTML = '<div class="mainBlock" id="mainBlock">parent</div>';
+            var parent = document.getElementById("mainBlock");
+            for (let i = 1; i <= form.num.value; i++) {
+                let str = "";
+                for (let i = 0; i < form.num.value; i++) {
+                    str += '<div class="block"></div>';
+                }
+                parent.innerHTML = str;
+            }
+            for (let i = 1; i <= form.num.value; i++) {
+                var block = document.getElementsByTagName("div")[i];
+                var randpx = getRandomInt(10, 200);
+                randpx += "px";
+                block.style.width = randpx;
+                var randclr = getRandomInt(0, 16777215-100000);
+                randclr = Number(randclr).toString(16);
+                block.style.backgroundColor = '#' + randclr;
+
+            }
+            document.getElementById("questionBlock").remove();
+        }
+    </script>
+    <body class="bg" id="BGBody">
+        <div class="main-block" id="questionBlock">
+            <form class="inp-container" action="" method="post" id="startForm" onsubmit="blocking(this)">
+                <input class="inp-in" type="number" name="num" id="num" />
+                <!-- <input type="button" onclick="blocking(document.getElementById('startForm'))" /> -->
+            </form>
+        </div>
+    </body>
+</html>

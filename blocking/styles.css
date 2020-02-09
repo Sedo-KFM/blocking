@@ -1,0 +1,45 @@
+.bg {
+    margin: 0px;
+    background-color: lavender;
+    font-family: 'Roboto', sans-serif;
+}
+.main-block {
+    background-color: lavender;
+    margin: 0px;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+}
+.mainBlock {
+    background-color: lavender;
+    margin: 0px;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-flow: row wrap;
+    /* justify-content: center;
+    align-items: flex-start; */
+    justify-content: space-around;
+    align-content: flex-start;
+}
+.inp-in {
+    background-color: darkslategray;
+    border-radius: 2px;
+    font-family: 'Roboto', sans-serif;
+    font-size: x-large;
+    color: lavender;
+    text-align: center;
+    border: darkslategray solid 2px;
+}
+.block {
+    /*width: 300px;*/
+    height: 15px;
+    margin: 10px 5px;
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+    /*background-color: darkslategray;*/
+}
